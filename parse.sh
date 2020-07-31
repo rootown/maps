@@ -6,6 +6,7 @@ from_variable() {
 	echo $(echo "$html" | grep "var $1" | sed "s/^[ \t]*//; s/var $1 = //; s/;//")
 }
 
+mkdir out
 cd out
 
 from_variable buildings > buildings.json
