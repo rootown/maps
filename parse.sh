@@ -1,6 +1,6 @@
 #!/bin/bash
 
-html=$(wget -qO - https://maps.uakron.edu)
+html=$(wget -qO /dev/null -S https://maps.uakron.edu)
 
 printf '%s\n' "$html"
 
