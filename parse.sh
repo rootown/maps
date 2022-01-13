@@ -2,6 +2,8 @@
 
 html=$(wget -O /dev/null -S https://maps.uakron.edu)
 
+sudo sed -i -e "s/CipherString = DEFAULT:@SECLEVEL=2/CipherString = DEFAULT:@SECLEVEL=1/" /etc/ssl/openssl.cnf
+
 printf '%s\n' "$html"
 
 from_variable() {
