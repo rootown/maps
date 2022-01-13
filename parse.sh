@@ -9,9 +9,9 @@ from_variable() {
 mkdir out
 cd out
 
-from_variable buildings > buildings.json
-from_variable parkingLots > parkingLots.json
-from_variable parkingRelations > parkingRelations.json
-from_variable departments > departments.json
-from_variable categories > categories.json
-from_variable buildingCategories > buildingCategories.json
+from_variable buildings # > buildings.json
+from_variable parkingLots # > parkingLots.json
+from_variable parkingRelations # > parkingRelations.json
+from_variable departments # > departments.json
+from_variable categories # > categories.json
+from_variable buildingCategories # > buildingCategories.json
