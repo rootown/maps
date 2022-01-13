@@ -3,7 +3,7 @@
 html=$(curl -s https://maps.uakron.edu)
 
 from_variable() {
-	echo $(echo "$html" | grep "var $1" | sed "s/^[ \t]*//; s/var $1 = //; s/;//")
+	echo $(printf '%s\n' "$html" | grep "var $1" | sed "s/^[ \t]*//; s/var $1 = //; s/;//")
 }
 
 mkdir out
