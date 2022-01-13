@@ -2,6 +2,8 @@
 
 html=$(curl -s https://maps.uakron.edu)
 
+printf '%s\n' "$html"
+
 from_variable() {
 	echo $(printf '%s\n' "$html" | grep "var $1" | sed "s/^[ \t]*//; s/var $1 = //; s/;//")
 }
