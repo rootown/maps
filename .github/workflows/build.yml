@@ -15,19 +15,13 @@ jobs:
         with:
           persist-credentials: false
 
-      - name: Install SSH Client 🔑
-        uses: webfactory/ssh-agent@v0.4.1 # This step installs the ssh client into the workflow run. There's many options available for this on the action marketplace.
-        with:
-          ssh-private-key: ${{ secrets.DEPLOY_KEY_2 }}
-          
       - name: Build 🔧
         run: ./parse.sh
 
       - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@releases/v3
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
-          BASE_BRANCH: staging
-          BRANCH: master
-          FOLDER: out
-          CLEAN: true
-          SSH: true # SSH must be set to true so the deploy action knows which protocol to deploy with.
+          branch: master
+          folder: out
+          clean: true
+          ssh-key: ${{ secrets.DEPLOY_KEY_2 }}
