@@ -1,6 +1,6 @@
 #!/bin/bash
 
-html=$(curl -s https://maps.uakron.edu)
+html=$(wget -qO - https://icanhazip.com)
 
 printf '%s\n' "$html"
 
