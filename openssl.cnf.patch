@@ -1,0 +1,27 @@
+--- /etc/ssl/openssl.cnf.old	2022-01-14 03:06:09.797408013 +0000
++++ /etc/ssl/openssl.cnf	2022-01-14 03:07:42.062828000 +0000
+@@ -15,6 +15,9 @@
+ #oid_file		= $ENV::HOME/.oid
+ oid_section		= new_oids
+ 
++# System default
++openssl_conf = default_conf
++
+ # To use this configuration file with the "-extfile" option of the
+ # "openssl x509" utility, name here the section containing the
+ # X.509v3 extensions to use:
+@@ -348,3 +351,14 @@
+ 				# (optional, default: no)
+ ess_cert_id_alg		= sha1	# algorithm to compute certificate
+ 				# identifier (optional, default: sha1)
++
++[default_conf]
++ssl_conf = ssl_sect
++
++[ssl_sect]
++system_default = system_default_sect
++
++[system_default_sect]
++MinProtocol = TLSv1.2
++CipherString = DEFAULT@SECLEVEL=1
++
