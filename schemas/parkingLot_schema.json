@@ -1,0 +1,67 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id":  "https://json-schema.org/draft/2020-12/schema",
+    "title": "University of Akron Lot Data",
+    "description": "JSON Schema for Parking Lot Data for the University of Akron's data format",
+    "type": "object",
+    "properties": {
+        "id": {
+            "description":"The id number of the lot in the database",
+            "type":"integer",
+            "minimum":1
+        },
+        "lot_number": {
+            "description":"The official lot Number, generally the same as the ID number but posted on a sign at the lot",
+            "type":"integer",
+            "minimum":1
+        },
+        "public": {
+            "description":"Whether or not the lot is available for public parking",
+            "type":"boolean"
+        },
+        "buildingRelations": {
+            "description":"An array listing the id's of the buildings with which the lot is associated",
+            "type:":"array",
+            "items":"integer"
+        }
+    },
+    "location": {
+        "address": {
+            "description": "The physical address of the lot",
+            "type": "string"
+        },
+        "lat": {
+            "description":"The latitude position of the lot",
+            "type":"number",
+            "minimum":-90,
+            "maximum":90
+        },
+        "lng": {
+            "description":"The longitude position of the lot",
+            "type":"number",
+            "minimum":-180,
+            "maximum":180
+        }
+    },
+    "parking_info": {
+        "spaces_total": {
+            "description":"The total number of parking spaces in the parking lot",
+            "type:":"integer",
+            "minimum":1
+        },
+        "accessability_spaces": {
+            "description":"The total number of handicap accessible parking spaces in the lot",
+            "type:":"integer",
+            "minimum":1
+        },
+        "lights": {
+            "description":"Whether or not there are lights at night in the lot",
+            "type:":"boolean"
+        },
+        "surface_info": {
+            "description":"Information about the surface of the parking lot",
+            "type:":"string"
+        }
+    },
+    "required":["id", "address", "lot_number"]
+}
