@@ -1,0 +1,3 @@
+# `Mapping Data`
+
+Mapping data for the University of Akron, originally hosted at maps.uakron.edu, and scripts to clean up the data to make it more uniform, more readable, and easier to utilize. Bringing standardization and consistency across the board, and omitting swaths of fields that went unused but were left in as data built up. Using GitHub actions, this process can be automated at whatever pace best fits changing data, meaning that it is maintainable into the forseeable future as a way of better representing the data created by the University.
