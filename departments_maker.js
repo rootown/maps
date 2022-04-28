@@ -90,7 +90,7 @@ try { // this better never fail
 
         // json writing
         fs.appendFileSync("./new_json_files/departments.json", JSON.stringify(departmentInfo));
-        if(count != dept.length) {
+        if(++count != (dept.length)) {
             fs.appendFileSync("./new_json_files/departments.json", ",")
         }
     });

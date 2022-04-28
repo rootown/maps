@@ -13,7 +13,7 @@ try { // this better never fail
         }
     });
     // json imports
-    const buildingsData = fs.readFileSync('./json_files/buildingData.json', 'utf8');;
+    const buildingsData = fs.readFileSync('./json_files/buildings.json', 'utf8');;
     const relationsData = fs.readFileSync('./json_files/parkingRelations.json', 'utf8');
     const categoriesData = fs.readFileSync('./json_files/categories.json', 'utf8');
 
