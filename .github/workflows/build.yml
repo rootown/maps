@@ -23,9 +23,12 @@ jobs:
       - name: Build 🔧
         run: ./parse.sh
 
+      - name: Transform
+        run: ./transform.sh
+
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: master
-          folder: out
+          folder: new_json_files
           ssh-key: ${{ secrets.DEPLOY_KEY_2 }}
